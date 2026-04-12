@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Balaji Agro Farm Pvt Ltd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-green': '#2D3319',
+                        'brand-cream': '#F5F5DC',
+                        'brand-gold': '#C5A059',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-brand-green text-brand-cream font-sans">
+
+    <nav class="fixed w-full z-50 bg-brand-green/95 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="h-12 w-12 bg-brand-gold rounded-full flex items-center justify-center font-serif text-brand-green font-bold">SB</div>
+                <div>
+                    <h1 class="text-sm font-semibold uppercase tracking-widest">Shree Balaji Agro Farm</h1>
+                    <p class="text-[10px] text-brand-gold uppercase">Private Limited</p>
+                </div>
+            </div>
+            <div class="hidden md:flex gap-8 font-medium text-sm uppercase tracking-widest">
+                <a href="#home" class="hover:text-brand-gold transition">Home</a>
+                <a href="#about" class="hover:text-brand-gold transition">About</a>
+                <a href="#products" class="hover:text-brand-gold transition">Products</a>
+                <a href="#contact" class="hover:text-brand-gold transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="images/factory-aerial.jpg" alt="Factory Aerial" class="w-full h-full object-cover opacity-30">
+        </div>
+        
+        <div class="relative z-10 text-center px-4">
+            <h2 class="font-serif text-5xl md:text-7xl mb-6 leading-tight">Your Source of Finest <br><span class="text-brand-gold italic">Rice & Flour Products</span></h2>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light opacity-80">Wholesome Products for Every Home since 2010.</p>
+            <a href="#products" class="px-10 py-4 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-green transition-all duration-500 font-bold uppercase tracking-[0.2em] text-sm">View Catalog</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 bg-black/20">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-brand-gold uppercase tracking-widest text-sm font-bold">Our Story</span>
+                <h3 class="font-serif text-4xl mt-4 mb-6">From Humble Beginnings to Industry Leaders</h3>
+                <p class="text-lg leading-relaxed text-brand-cream/70 mb-8">
+                    Established in 2010, Shree Balaji Agro Farm Industries began with a modest rice milling plant in Jharkhand. We are the first Buhler-associated rice milling plant in the Kolhan district. Today, we stand as leaders in processing and manufacturing a diverse range of flour and food items.
+                </p>
+                <div class="grid grid-cols-2 gap-8 border-t border-brand-gold/30 pt-8">
+                    <div>
+                        <p class="text-4xl font-serif text-brand-gold">3.5L</p>
+                        <p class="text-xs uppercase tracking-widest opacity-60">Sq. Ft. Factory</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-serif text-brand-gold">15+</p>
+                        <p class="text-xs uppercase tracking-widest opacity-60">Years Experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="images/factory-inside.jpg" alt="Inside the Mill" class="rounded-sm shadow-2xl grayscale hover:grayscale-0 transition duration-700 border border-white/10">
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h3 class="font-serif text-5xl mb-4">The Shree Bhog Range</h3>
+                <p class="text-brand-gold uppercase tracking-[0.3em] text-xs">Premium Quality Grains</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="group border border-white/5 bg-white/5 p-8 text-center hover:bg-white/10 transition">
+                    <img src="images/rice-platinum.png" alt="Platinum Rice" class="h-64 mx-auto mb-6 object-contain group-hover:scale-105 transition duration-500">
+                    <h4 class="font-serif text-2xl text-brand-gold">Platinum Rice</h4>
+                    <p class="text-sm opacity-60 mt-2 italic font-light">Long grain premium quality</p>
+                </div>
+                <div class="group border border-white/5 bg-white/5 p-8 text-center hover:bg-white/10 transition">
+                    <img src="images/rice-gold.png" alt="Gold Rice" class="h-64 mx-auto mb-6 object-contain group-hover:scale-105 transition duration-500">
+                    <h4 class="font-serif text-2xl text-brand-gold">Gold Rice</h4>
+                    <p class="text-sm opacity-60 mt-2 italic font-light">Authentic taste and aroma</p>
+                </div>
+                <div class="group border border-white/5 bg-white/5 p-8 text-center hover:bg-white/10 transition">
+                    <img src="images/atta-chakki.png" alt="Chakki Atta" class="h-64 mx-auto mb-6 object-contain group-hover:scale-105 transition duration-500">
+                    <h4 class="font-serif text-2xl text-brand-gold">Chakki Atta</h4>
+                    <p class="text-sm opacity-60 mt-2 italic font-light">100% Pure Whole Wheat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 bg-brand-cream text-brand-green">
+        <div class="max-w-5xl mx-auto text-center">
+            <h3 class="font-serif text-5xl mb-12">Contact Our Office</h3>
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <h5 class="font-bold uppercase text-xs tracking-widest mb-2">Call Us</h5>
+                    <p class="text-xl">+91 9031746938</p>
+                </div>
+                <div>
+                    <h5 class="font-bold uppercase text-xs tracking-widest mb-2">Email Us</h5>
+                    <p class="text-xl">shreebalajiagro.cbsa@gmail.com</p>
+                </div>
+                <div>
+                    <h5 class="font-bold uppercase text-xs tracking-widest mb-2">Visit Us</h5>
+                    <p class="text-xl">Ranjitpur, Jharkhand</p>
+                </div>
+            </div>
+            
+            <div class="max-w-2xl mx-auto bg-white p-10 shadow-xl">
+                <form class="grid grid-cols-1 gap-6 text-left">
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest mb-2 block">Full Name</label>
+                        <input type="text" class="w-full border-b-2 border-brand-green/10 py-2 focus:border-brand-green outline-none transition">
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest mb-2 block">Email Address</label>
+                        <input type="email" class="w-full border-b-2 border-brand-green/10 py-2 focus:border-brand-green outline-none transition">
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest mb-2 block">Your Message</label>
+                        <textarea rows="3" class="w-full border-b-2 border-brand-green/10 py-2 focus:border-brand-green outline-none transition"></textarea>
+                    </div>
+                    <button class="bg-brand-green text-brand-cream py-4 font-bold uppercase tracking-widest mt-4 hover:bg-black transition">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-brand-green text-center">
+        <p class="text-[10px] uppercase tracking-[0.5em] opacity-40">© 2026 Shree Balaji Agro Farm Private Limited</p>
+    </footer>
+
+</body>
+</html>
