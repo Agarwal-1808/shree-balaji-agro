@@ -1,157 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shree Balaji Agro Farm Pvt Ltd</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-green': '#2D3319',
-                        'brand-cream': '#F5F5DC',
-                        'brand-gold': '#C5A059',
-                    },
-                    fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#30351f"><title>Shree Balaji Agro Farm Private Limited | Rice & Flour</title>
+    <meta name="description" content="Discover Shree Bhog rice, atta, maida and sooji from Shree Balaji Agro Farm Private Limited in Ranjitpur, Jharkhand.">
+    <meta property="og:title" content="Shree Balaji Agro Farm Private Limited | Rice & Flour">
+    <meta property="og:description" content="Discover Shree Bhog rice, atta, maida and sooji from Shree Balaji Agro Farm Private Limited in Ranjitpur, Jharkhand.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="assets/images/logo-600.webp" type="image/webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/config.js" defer>
     </script>
-    <style>
-        html { scroll-behavior: smooth; }
-    </style>
-</head>
-<body class="bg-brand-green text-brand-cream font-sans">
-
-    <nav class="fixed w-full z-50 bg-brand-green/95 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <div class="h-12 w-12 bg-brand-gold rounded-full flex items-center justify-center font-serif text-brand-green font-bold">SB</div>
-                <div>
-                    <h1 class="text-sm font-semibold uppercase tracking-widest">Shree Balaji Agro Farm</h1>
-                    <p class="text-[10px] text-brand-gold uppercase">Private Limited</p>
-                </div>
-            </div>
-            <div class="hidden md:flex gap-8 font-medium text-sm uppercase tracking-widest">
-                <a href="#home" class="hover:text-brand-gold transition">Home</a>
-                <a href="#about" class="hover:text-brand-gold transition">About</a>
-                <a href="#products" class="hover:text-brand-gold transition">Products</a>
-                <a href="#contact" class="hover:text-brand-gold transition">Contact</a>
-            </div>
+    <script src="js/script.js" defer>
+    </script>
+  </head>
+  <body id="top"><a class="skip-link" href="#main">Skip to content</a>
+    <div class="topbar"><span>RICE & FLOUR · ROOTED IN JHARKHAND SINCE 2010</span><a href="tel:+917061157272">+91 70611 57272</a>
+    </div>
+    <header class="site-header">
+      <div class="header-inner"><a class="brand" href="index.html" aria-label="Shree Balaji Agro Farm Private Limited home"><img src="assets/images/logo-600.webp" width="91" height="55" alt="Shree Bhog"><span>Shree Balaji Agro Farm<small>PRIVATE LIMITED</small></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden>Menu <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="main-nav" aria-label="Main navigation"><a href="index.html" aria-current=page>Home</a><a href="about.html" >About Us</a><a href="products.html" >Products</a><a href="contact.html" >Contact Us</a><a class="nav-cta" href="contact.html?business=Distributor">Become a partner <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="home-hero" aria-labelledby="hero-title"><img class="hero-image" src="assets/images/factory-aerial-1600.webp" srcset="assets/images/factory-aerial-800.webp 800w, assets/images/factory-aerial-1600.webp 1600w, assets/images/factory-aerial-2400.webp 2400w" sizes="(max-width: 760px) 100vw, 90vw" alt="Aerial view of the Shree Balaji Agro Farm premises in Ranjitpur" width="2612" height="774" fetchpriority=high decoding="async">
+        <div class="hero-shade">
         </div>
-    </nav>
-
-    <section id="home" class="relative h-screen flex items-center justify-center">
-        <div class="absolute inset-0 z-0">
-            <img src="images/factory-aerial.jpg" alt="Factory Aerial" class="w-full h-full object-cover opacity-30">
+        <div class="wrap hero-content">
+          <p class="eyebrow"><span class="gold-line"></span> SHREE BHOG · FROM OUR MILL TO YOUR HOME
+          </p>
+          <h1 id="hero-title">Your Source of Finest<br><em>Rice and Flour</em><br>Products
+          </h1>
+          <p class="hero-tagline">Wholesome Products for Every Home
+          </p>
+          <a class="button button-cream" href="products.html">Explore our products <span aria-hidden="true">↗</span></a>
         </div>
-        
-        <div class="relative z-10 text-center px-4">
-            <h2 class="font-serif text-5xl md:text-7xl mb-6 leading-tight">Your Source of Finest <br><span class="text-brand-gold italic">Rice & Flour Products</span></h2>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light opacity-80">Wholesome Products for Every Home since 2010.</p>
-            <a href="#products" class="px-10 py-4 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-green transition-all duration-500 font-bold uppercase tracking-[0.2em] text-sm">View Catalog</a>
+        <div class="hero-caption"><span>RANJITPUR, JHARKHAND</span><a href="#introduction">Discover our story ↓</a>
         </div>
-    </section>
-
-    <section id="about" class="py-24 px-6 bg-black/20">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      </section>
+      <div class="heritage-strip"><span>ESTABLISHED 2010</span><span class="ornament">✦</span><span>RICE · ATTA · MAIDA · SOOJI</span><span class="ornament">✦</span><span>THE SHREE BHOG COLLECTION</span>
+      </div>
+      <section id="introduction" class="wrap section intro-grid">
+        <div class="reveal">
+          <p class="eyebrow">01 / OUR STORY
+          </p>
+          <h2>Rooted in tradition.<br>Growing with <em>purpose.</em>
+          </h2>
+        </div>
+        <div class="intro-copy reveal">
+          <p class="lead">The staples of everyday life.<br>A story that began in Jharkhand.
+          </p>
+          <p>Since 2010, Shree Balaji Agro Farm Private Limited has been part of the region’s rice manufacturing story. In 2025, we expanded our range to include atta, maida and sooji.
+          </p>
+          <p>Under the Shree Bhog name, we bring together familiar food essentials for homes, retailers and business partners.
+          </p>
+          <a class="text-link" href="about.html">Get to know us <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+      <section class="collection section">
+        <div class="wrap">
+          <div class="section-heading reveal">
             <div>
-                <span class="text-brand-gold uppercase tracking-widest text-sm font-bold">Our Story</span>
-                <h3 class="font-serif text-4xl mt-4 mb-6">From Humble Beginnings to Industry Leaders</h3>
-                <p class="text-lg leading-relaxed text-brand-cream/70 mb-8">
-                    Established in 2010, Shree Balaji Agro Farm Industries began with a modest rice milling plant in Jharkhand. We are the first Buhler-associated rice milling plant in the Kolhan district. Today, we stand as leaders in processing and manufacturing a diverse range of flour and food items.
+              <p class="eyebrow">02 / OUR PRODUCTS
+              </p>
+              <h2>Everyday essentials.<br><em>Distinctly Shree Bhog.</em>
+              </h2>
+            </div>
+            <a class="text-link" href="products.html">Explore the full collection <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="product-grid featured">
+            <article class="product-card">
+              <div class="product-art rice-platinum"><span class="product-kicker">RICE COLLECTION</span><img src="assets/images/rice-platinum-600.webp" alt="Platinum Rice original packaging artwork" width="400" height="560" loading="lazy" decoding="async">
+              </div>
+              <div class="product-body">
+                <h3>Platinum Rice
+                </h3>
+                <p>Platinum, from our Shree Bhog rice collection.
                 </p>
-                <div class="grid grid-cols-2 gap-8 border-t border-brand-gold/30 pt-8">
-                    <div>
-                        <p class="text-4xl font-serif text-brand-gold">3.5L</p>
-                        <p class="text-xs uppercase tracking-widest opacity-60">Sq. Ft. Factory</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl font-serif text-brand-gold">15+</p>
-                        <p class="text-xs uppercase tracking-widest opacity-60">Years Experience</p>
-                    </div>
-                </div>
-            </div>
-            <div class="relative">
-                <img src="images/factory-inside.jpg" alt="Inside the Mill" class="rounded-sm shadow-2xl grayscale hover:grayscale-0 transition duration-700 border border-white/10">
-            </div>
+                <a class="product-enquiry" href="contact.html?product=Platinum%20Rice">Enquire about this product <span aria-hidden="true">↗</span><span class="sr-only">: Platinum Rice</span></a>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-art rice-gold"><span class="product-kicker">RICE COLLECTION</span><img src="assets/images/rice-gold-600.webp" alt="Gold Rice original packaging artwork" width="400" height="560" loading="lazy" decoding="async">
+              </div>
+              <div class="product-body">
+                <h3>Gold Rice
+                </h3>
+                <p>Discover Gold, part of the Shree Bhog rice range.
+                </p>
+                <a class="product-enquiry" href="contact.html?product=Gold%20Rice">Enquire about this product <span aria-hidden="true">↗</span><span class="sr-only">: Gold Rice</span></a>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-art rice-silver"><span class="product-kicker">RICE COLLECTION</span><img src="assets/images/rice-silver-600.webp" alt="Silver Rice original packaging artwork" width="400" height="560" loading="lazy" decoding="async">
+              </div>
+              <div class="product-body">
+                <h3>Silver Rice
+                </h3>
+                <p>Explore Silver from our family of rice products.
+                </p>
+                <a class="product-enquiry" href="contact.html?product=Silver%20Rice">Enquire about this product <span aria-hidden="true">↗</span><span class="sr-only">: Silver Rice</span></a>
+              </div>
+            </article>
+            <article class="product-card">
+              <div class="product-art atta-chakki"><span class="product-kicker">FLOUR COLLECTION</span><img src="assets/images/atta-chakki-600.webp" alt="Chakki Atta original packaging artwork" width="400" height="560" loading="lazy" decoding="async">
+              </div>
+              <div class="product-body">
+                <h3>Chakki Atta
+                </h3>
+                <p>Whole wheat flour for everyday rotis and home cooking.
+                </p>
+                <a class="product-enquiry" href="contact.html?product=Chakki%20Atta">Enquire about this product <span aria-hidden="true">↗</span><span class="sr-only">: Chakki Atta</span></a>
+              </div>
+            </article>
+          </div>
+          <div class="collection-bottom"><span>Rice, atta, maida and sooji — discover our complete range.</span><a href="products.html#flour">Explore flour products →</a>
+          </div>
         </div>
-    </section>
-
-    <section id="products" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h3 class="font-serif text-5xl mb-4">The Shree Bhog Range</h3>
-                <p class="text-brand-gold uppercase tracking-[0.3em] text-xs">Premium Quality Grains</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="group border border-white/5 bg-white/5 p-8 text-center hover:bg-white/10 transition">
-                    <img src="images/rice-platinum.png" alt="Platinum Rice" class="h-64 mx-auto mb-6 object-contain group-hover:scale-105 transition duration-500">
-                    <h4 class="font-serif text-2xl text-brand-gold">Platinum Rice</h4>
-                    <p class="text-sm opacity-60 mt-2 italic font-light">Long grain premium quality</p>
-                </div>
-                <div class="group border border-white/5 bg-white/5 p-8 text-center hover:bg-white/10 transition">
-                    <img src="images/rice-gold.png" alt="Gold Rice" class="h-64 mx-auto mb-6 object-contain group-hover:scale-105 transition duration-500">
-                    <h4 class="font-serif text-2xl text-brand-gold">Gold Rice</h4>
-                    <p class="text-sm opacity-60 mt-2 italic font-light">Authentic taste and aroma</p>
-                </div>
-                <div class="group border border-white/5 bg-white/5 p-8 text-center hover:bg-white/10 transition">
-                    <img src="images/atta-chakki.png" alt="Chakki Atta" class="h-64 mx-auto mb-6 object-contain group-hover:scale-105 transition duration-500">
-                    <h4 class="font-serif text-2xl text-brand-gold">Chakki Atta</h4>
-                    <p class="text-sm opacity-60 mt-2 italic font-light">100% Pure Whole Wheat</p>
-                </div>
-            </div>
+      </section>
+      <section class="wrap section factory-grid">
+        <div class="factory-photo reveal"><img class="" src="assets/images/factory-inside-1600.webp" srcset="assets/images/factory-inside-800.webp 800w, assets/images/factory-inside-1600.webp 1600w, assets/images/factory-inside-2400.webp 1642w" sizes="(max-width: 760px) 100vw, 90vw" alt="Exterior buildings and courtyard at the Shree Balaji Agro Farm premises" width="1642" height="794" loading=lazy decoding="async"><span>OUR HOME IN RANJITPUR</span>
         </div>
-    </section>
-
-    <section id="contact" class="py-24 px-6 bg-brand-cream text-brand-green">
-        <div class="max-w-5xl mx-auto text-center">
-            <h3 class="font-serif text-5xl mb-12">Contact Our Office</h3>
-            <div class="grid md:grid-cols-3 gap-12 mb-16">
-                <div>
-                    <h5 class="font-bold uppercase text-xs tracking-widest mb-2">Call Us</h5>
-                    <p class="text-xl">+91 9031746938</p>
-                </div>
-                <div>
-                    <h5 class="font-bold uppercase text-xs tracking-widest mb-2">Email Us</h5>
-                    <p class="text-xl">shreebalajiagro.cbsa@gmail.com</p>
-                </div>
-                <div>
-                    <h5 class="font-bold uppercase text-xs tracking-widest mb-2">Visit Us</h5>
-                    <p class="text-xl">Ranjitpur, Jharkhand</p>
-                </div>
+        <div class="factory-copy reveal">
+          <p class="eyebrow">03 / MANUFACTURING
+          </p>
+          <h2>Real roots.<br>A shared <em>commitment.</em>
+          </h2>
+          <p>Our factory in Ranjitpur is at the heart of our rice and flour manufacturing journey. It connects our beginnings in rice milling with a growing range of food essentials.
+          </p>
+          <div class="simple-facts">
+            <div><span>01</span>
+              <p><strong>Rice milling</strong>The foundation of our business since 2010.
+              </p>
             </div>
-            
-            <div class="max-w-2xl mx-auto bg-white p-10 shadow-xl">
-                <form class="grid grid-cols-1 gap-6 text-left">
-                    <div>
-                        <label class="text-xs font-bold uppercase tracking-widest mb-2 block">Full Name</label>
-                        <input type="text" class="w-full border-b-2 border-brand-green/10 py-2 focus:border-brand-green outline-none transition">
-                    </div>
-                    <div>
-                        <label class="text-xs font-bold uppercase tracking-widest mb-2 block">Email Address</label>
-                        <input type="email" class="w-full border-b-2 border-brand-green/10 py-2 focus:border-brand-green outline-none transition">
-                    </div>
-                    <div>
-                        <label class="text-xs font-bold uppercase tracking-widest mb-2 block">Your Message</label>
-                        <textarea rows="3" class="w-full border-b-2 border-brand-green/10 py-2 focus:border-brand-green outline-none transition"></textarea>
-                    </div>
-                    <button class="bg-brand-green text-brand-cream py-4 font-bold uppercase tracking-widest mt-4 hover:bg-black transition">Submit Inquiry</button>
-                </form>
+            <div><span>02</span>
+              <p><strong>A broader flour range</strong>Atta, maida and sooji joined our journey in 2025.
+              </p>
             </div>
+          </div>
+          <a class="text-link" href="about.html#manufacturing">Discover our manufacturing story <span aria-hidden="true">↗</span></a>
         </div>
-    </section>
-
-    <footer class="py-12 bg-brand-green text-center">
-        <p class="text-[10px] uppercase tracking-[0.5em] opacity-40">© 2026 Shree Balaji Agro Farm Private Limited</p>
+      </section>
+      <section class="milestones section">
+        <div class="wrap">
+          <div>
+            <p class="eyebrow">04 / OUR JOURNEY
+            </p>
+            <h2>Built over time.<br><em>Looking ahead.</em>
+            </h2>
+          </div>
+          <div class="milestone"><span>2010</span>
+            <h3>Our beginning in rice
+            </h3>
+            <p>Established in Jharkhand, with rice milling at the heart of our operations.
+            </p>
+          </div>
+          <div class="milestone"><span>2025</span>
+            <h3>A new chapter in flour
+            </h3>
+            <p>Our range expanded to include atta, maida and sooji.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="partner-band">
+        <div class="wrap">
+          <div>
+            <p class="eyebrow">FOR RETAILERS, DISTRIBUTORS & WHOLESALERS
+            </p>
+            <h2>Let’s grow <em>together.</em>
+            </h2>
+            <p>Bring Shree Bhog to your customers. Start a conversation with our team.
+            </p>
+          </div>
+          <a class="button button-cream" href="contact.html?business=Distributor">Discuss a partnership <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div class="footer-brand"><a class="brand" href="index.html"><img src="assets/images/logo-600.webp" width="91" height="55" alt="Shree Bhog"><span>Shree Balaji Agro Farm<small>PRIVATE LIMITED</small></span></a>
+          <p>Wholesome products.<br>For every home.
+          </p>
+        </div>
+        <div>
+          <h2>Explore
+          </h2>
+          <a href="about.html">Our story</a><a href="products.html">Our products</a><a href="about.html#manufacturing">Our manufacturing journey</a><a href="contact.html">Get in touch</a>
+        </div>
+        <div>
+          <h2>Talk to our team
+          </h2>
+          <a href="tel:+917061157272">+91 7061157272</a><a href="mailto:shreebalajiagro.cbsa@gmail.com">shreebalajiagro.cbsa@gmail.com</a><a href="https://wa.me/917061157272" target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
+          <p>Ranjitpur, Jharkhand 831002, India
+          </p>
+        </div>
+      </div>
+      <div class="wrap footer-bottom"><span>© <span data-year>2026</span> Shree Balaji Agro Farm Private Limited</span><a href="#top">Back to top ↑</a>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>
