@@ -1611,3 +1611,25 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .site-footer .footer-grid > div:not(.footer-brand) > a {
   padding-block:7px;
 }
+
+/* Homepage video: layout, text and the existing olive overlay stay unchanged. */
+.home-hero > .hero-image { z-index:-4; }
+.hero-video {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 56%;
+  z-index:-3;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .4s ease;
+}
+.hero-video.is-playing { opacity:1; }
+@media (max-width:760px) {
+  .hero-video { object-position:58% center; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero-video { display:none; transition:none; }
+}
