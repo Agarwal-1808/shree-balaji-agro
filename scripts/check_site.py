@@ -26,7 +26,7 @@ class Page(HTMLParser):
             self.description += 1
         if tag == 'a' and 'aria-current' in a: self.current += 1
         if tag == 'img': assert 'alt' in a, 'Missing image alt attribute'
-        for key in ['src', 'href']:
+        for key in ['src', 'href', 'poster', 'data-desktop-src', 'data-mobile-src']:
             if a.get(key): self.refs.append(a[key])
         if a.get('srcset'):
             self.refs.extend(item.strip().split()[0] for item in a['srcset'].split(','))
@@ -36,7 +36,10 @@ count = 0
 for name, page in pages.items():
     assert page.title == page.description == page.h1 == page.current == 1, name
     text = (ROOT / name).read_text()
-    assert '9031746938' not in text, 'Old phone number'
+    assert '7061157272' not in text, 'Old phone number'
+    assert 'tel:+919031746938' in text and 'https://wa.me/919031746938' in text
+    assert 'Shree Bhog' in text
+    assert 'aria-label="Official social media" hidden' in text
     assert '350,000' not in text and 'Bühler' not in text, 'Unconfirmed claim'
     for ref in page.refs:
         parsed = urlsplit(ref)
@@ -51,11 +54,11 @@ for name, page in pages.items():
         count += 1
 catalogue = (ROOT / 'products.html').read_text()
 assert catalogue.count('class="product-card"') == 8
-assert catalogue.count('class="pack-placeholder"') == 4
+assert catalogue.count('class="pack-placeholder"') == 0
 assert 'https://maps.app.goo.gl/C4Exgk9TKozG9GiR8?g_st=ic' in (ROOT/'contact.html').read_text()
-# Compare every original asset against the untouched initial commit, including placeholder.
-base = '9d16f2bfd286a5254a6a6c55d0b41ccb9c4e28a6'
+# Compare every original asset against the pre-refinement commit, including placeholder.
+base = '4a33c31fd8a3d0d885a31b52678a19e6aa2b2297'
 for path in (ROOT/'images').iterdir():
     original = subprocess.check_output(['git', '-C', str(ROOT), 'show', f'{base}:images/{path.name}'])
     assert hashlib.sha256(original).digest() == hashlib.sha256(path.read_bytes()).digest(), path.name
-print(f'PASS: 4 pages; {count} local references; all anchors; 8 products; 4 placeholders; original media unchanged.')
+print(f'PASS: 4 pages; {count} local references; all anchors; 8 products; no placeholders; original media unchanged.')

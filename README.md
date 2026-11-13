@@ -19,30 +19,30 @@ about.html             Company history, manufacturing and regional presence
 products.html          All eight products, divided into rice and flour
 contact.html           Contact details, verified Maps link and enquiry form
 css/styles.css         Shared responsive design system
-js/config.js           Public webhook and map settings
+js/config.js           Central company/contact, social, webhook and map settings
 js/script.js           Navigation, reveals, enquiry preselection and submission
 assets/images/         Optimized WebP image derivatives
-assets/icons/grain.svg Decorative mark for clearly labelled image placeholders
+assets/icons/grain.svg Unused decorative mark retained from the initial implementation
 images/                Original media, preserved byte-for-byte
 scripts/check_site.py  Static content, asset and original-file checks
 tests/interactions.cjs JavaScript behaviour tests (Node built-ins only)
 docs/REVIEW.md         Content confirmation and pre-publication checklist
 ```
 
-The original `factory-inside.jpg` is an **exterior factory/courtyard** image. It is not presented as an interior. No videos existed in the source repository. The old unused `style.css` was removed from this branch; the old experiment remains in Git history and on `main`.
+The original `factory-inside.jpg` is an **exterior factory/courtyard** image. It is not presented as an interior. The uploaded aerial video is integrated as responsive, silent H.264 desktop/mobile derivatives in `assets/videos/`, with the aerial photograph as poster/fallback. Reduced motion and Save-Data preferences retain the photograph. See `assets/videos/README.md` for provenance. The old unused `style.css` was removed from this branch; the old experiment remains in Git history and on `main`.
 
 ## Edit content and design
 
-- **Text:** edit the appropriate HTML file. All content is real HTML and remains available without JavaScript. Header and footer markup are intentionally repeated in all four files so there is no runtime template dependency; update all four when changing shared contact details or navigation.
+- **Text:** edit the appropriate HTML file. All content is real HTML and remains available without JavaScript. Header and footer markup are intentionally repeated in all four files so there is no runtime template dependency; update all four when changing navigation. For contact details, edit `js/config.js` and run `node scripts/sync-contact.cjs`; this updates static links and text on all pages, including when JavaScript is disabled.
 - **Colours:** edit `:root` at the top of `css/styles.css`. `--olive`, `--cream` and `--gold` control the visual identity.
 - **Fonts:** change `--serif` and `--sans`. Current typography uses local system fonts, so appearance varies slightly by platform. There are no font licences or third-party requests to manage.
 - **Images:** keep originals in `images/`; place web-ready derivatives in `assets/images/`. Update `src`, `srcset`, `sizes`, `width`, `height` and descriptive `alt` text. Srcset width descriptors must match actual pixel widths. Keep the main hero eager/high priority and below-fold images lazy loaded.
-- **Missing product art:** replace `.pack-placeholder` inside the relevant `.product-art` with an image once genuine art is available. Do not turn the placeholder into an invented branded pack. Missing: Alcor Mansoori Rice, Premium Maida, Bakery Maida and Sooji. The existing Atta artwork contains two pack designs together.
+- **Product art:** all eight products now use genuine supplied packaging. Platinum, Gold, Silver and Chakki Atta use their named originals. Alcor uses `Alcor 25 Kg Final 260318.png`; Premium Maida uses the orange BLACK CORRECTION artwork; Bakery Maida uses the turquoise FINAL (28-11-2024) artwork; Sooji uses the green lower panel of `SRI BHOG SOOJI AND MAIDA APPROVED.jpg`. Web derivatives remove print margins where appropriate without stretching. Original artwork remains untouched; the Atta image contains two designs together.
 - **Products:** edit the cards in `products.html`, featured cards in `index.html`, and options in the contact form. Each enquiry button passes a URL-encoded product name to `contact.html?product=...`; names must match the corresponding option exactly.
-- **Phone:** +91 7061157272, including `tel:` and `wa.me` links throughout. The older phone has been replaced.
+- **Contact:** confirmed phone/WhatsApp is +91 9031746938. Email is temporarily shreebalajiagro.cbsa@gmail.com. Change these in `company` in `js/config.js`, then run the sync script. No credentials belong in this public file.
 - **Maps:** the contact page uses the exact business link supplied by the owner: https://maps.app.goo.gl/C4Exgk9TKozG9GiR8?g_st=ic. It opens externally. The redirect could not be resolved in this environment, so there is no invented coordinate or unverified embedded map. To embed the map later, obtain its official Share → Embed a map URL and replace the photo/location panel with a titled, lazy-loaded iframe; retain the direct link. `config.js` records the approved URL for reference; HTML contains the working no-JS link.
-- **Social accounts:** no Facebook or Instagram URLs were supplied/verified, so none are invented. WhatsApp uses the owner-provided number; the account's availability must be checked before launch.
-- **SEO:** every page has its own title, description and Open Graph text. Add canonical URLs, absolute Open Graph image/URL metadata, sitemap and robots settings once the final domain and publication status are known. Do not publish preview URLs as canonical URLs.
+- **Social accounts:** hidden until official HTTPS profile URLs are entered in `social` in `js/config.js` and the sync script is run. WhatsApp uses the confirmed number; account availability must be checked before launch.
+- **SEO:** each page has unique titles/descriptions, Open Graph/Twitter text and LocalBusiness structured data. Set `company.siteUrl` to the approved HTTPS domain and run the sync script to generate canonical and absolute sharing-image URLs. Structured postal address fields are in the sync script if the business moves. Add sitemap/robots settings appropriate to the approved deployment; never use a preview domain as canonical.
 
 ## n8n integration — disabled until configured AND tested
 
@@ -55,7 +55,7 @@ The frontend contains no credentials. Online submission remains disabled unless 
 5. Set `enquiry.webhookUrl` in `js/config.js`. Use a private development copy to enable `webhookVerified: true` for integration tests. Test valid delivery, rejected input, CORS, offline/timeouts, server errors, non-JSON responses and repeated clicks. Verify actual receipt in n8n/destination storage, not only the browser message.
 6. Only after those tests pass, set `webhookVerified: true` in the intended release configuration. Obtain owner approval before publishing.
 
-Collected fields: name, phone, email, business type, product interest, message and consent. Example JSON (illustrative customer data):
+Collected fields: name, phone, email, enquiry category (stored as `businessType`), product interest, message and consent. Example JSON (illustrative customer data):
 
 ```json
 {
@@ -77,6 +77,14 @@ Requests time out after 15 seconds. In-flight submissions are locked. Identical 
 
 ## Checks
 
-Run `python3 scripts/check_site.py` and `node --testtests/interactions.cjs`. These require no third-party packages. They validate local links/anchors/media, page metadata, original media integrity, catalogue and core JavaScript behaviours. They do **not** replace browser layout testing or a real n8n integration test.
+Run `python3 scripts/check_site.py` and `node --test tests/*.cjs`. These require no third-party packages. They validate local links/anchors/media, page metadata, original media integrity, catalogue and core JavaScript behaviours. They do **not** replace browser layout testing or a real n8n integration test.
 
 Before publication, follow `docs/REVIEW.md`, review all four pages at phone, tablet and desktop widths, inspect browser console/network errors, verify the Maps destination and WhatsApp account, and test the real webhook if enabling it.
+
+## Deployment (only after explicit approval)
+
+This is a static site: serve the repository root on an HTTPS static host, without a build command. Keep the four `.html` URLs unless the chosen host explicitly supports redirects/rewrites; relative navigation works on subdirectory hosting. Preserve `assets/`, `css/` and `js/`. Configure the approved domain, run the sync script and checks, and review all four pages before uploading. Do not merge into main or publish without approval. No deployment has been performed.
+
+## Final refinement scope
+
+The existing olive/cream/gold design and hero layout are preserved. Header/footer spacing, product presentation, company/brand messaging, the 2010–2025–Today timeline and factual manufacturing copy are refined. Manufacturing methods such as specific grain-selection and quality-check procedures are intentionally not asserted without confirmation. No certification badges, rankings, capacity claims or invented social links are added.

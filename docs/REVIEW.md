@@ -14,16 +14,16 @@ No certifications, awards, customer testimonials, production capacity figures, n
 - Company name consistently follows the owner's instruction: Shree Balaji Agro Farm Private Limited.
 - History: rice milling began in 2010; atta, maida and sooji expansion in 2025, as shown in the Wix recording.
 - Regional presence: Jharkhand, Odisha and West Bengal, from the recording.
-- Updated phone: +91 7061157272; email: shreebalajiagro.cbsa@gmail.com.
+- Updated phone: +91 9031746938; email: shreebalajiagro.cbsa@gmail.com.
 - Address: Ranjitpur, Jharkhand 831002, India, as supplied.
 - Owner supplied the exact Google Maps link. It is linked directly; an embedded map awaits a resolvable official embed URL.
-- Four clearly labelled product image placeholders await original Alcor Mansoori, Premium Maida, Bakery Maida and Sooji artwork.
+- All eight products use supplied packaging; original artwork is preserved. Shree Bhog is identified as the consumer brand of the company.
 - No original media have been changed. Factory courtyard photograph is correctly labelled as exterior.
 - Values are expressed as commitments and business focus, not invented achievements.
 
 ## Launch gates
 
-- Owner approves all four pages and missing-media treatment.
+- Owner approves all four pages and product artwork presentation.
 - Owner confirms whether to add the two claims above.
 - Review desktop (1440px), tablet (768px), phone (390px) and narrow phone (320px).
 - Test menu by keyboard, Escape close, focus visibility, active navigation and reduced-motion mode.
